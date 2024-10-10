@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "289113257493",
+    "project_id": "usan-8525b",
+    "storage_bucket": "usan-8525b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289113257493:android:c6289e2957efcb59c6c01c",
+        "android_client_info": {
+          "package_name": "com.example.nisanaesan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcW-3a_UGy_3GuyxBYs3zOFyBKMY_V34Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
