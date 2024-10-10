@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nisanaesan/screen/home/home_screen.dart';
+import 'package:nisanaesan/screen/s_first_user.dart';
+import 'package:nisanaesan/screen/s_login.dart';
 
 import '../../theme.dart';
 
@@ -14,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), (){
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
     });
     super.initState();
   }
@@ -24,7 +25,6 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: mainColor,
       body: Center(
-
         child: Image.asset('assets/images/rive/usan.png')
       ),
           
