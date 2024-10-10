@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nisanaesan/path.dart';
 import 'package:nisanaesan/theme.dart';
 import 'package:sign_in_button/sign_in_button.dart';
 
@@ -21,13 +22,16 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Padding(padding: EdgeInsets.only(bottom: 30),
             child: Image.asset('assets/images/rive/usan.png',width: 100,height: 100,)),
+
             SizedBox(height: 25,),
-            SignInButton(Buttons.google, onPressed: (){
-            }),
-            SizedBox(height: 25,),
-            SignInButton(Buttons.facebookNew, onPressed: (){}),
-            SizedBox(height: 25,),
-            SignInButton(Buttons.apple, onPressed: (){})
+            TextButton(onPressed: (){}, child: Image.asset('$imagePath/k_m.png',width: 600)),
+      TextButton(onPressed: (){}, child: Image.asset('$imagePath/google_3x.png',width: 185,
+      )),
+
+
+
+
+
           ],
         ),
       )
