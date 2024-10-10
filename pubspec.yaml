@@ -46,6 +46,11 @@ dependencies:
   flutter_neumorphic_plus: ^3.4.0
   google_fonts: ^6.2.1
   sign_in_button: ^3.2.0
+  firebase_core: ^3.6.0
+  cloud_firestore: ^5.4.4
+
+  # with Firebase
+
 
   
 
