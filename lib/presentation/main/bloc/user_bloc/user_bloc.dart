@@ -33,86 +33,20 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     UserLogin event,
     Emitter<UserState> emit,
   ) async {
-    try {
-      emit(state.copyWith(status: Status.loading));
 
-      final response = await _userUsecase.execute<Result<User>>(
-        usecase: LoginUsecase(),
-      );
-
-      response.when(
-        success: (user) {
-          emit(state.copyWith(status: Status.success, user: user));
-        },
-        failure: (_) {
-          emit(state.copyWith(status: Status.initial));
-        },
-      );
-    } on ErrorResponse catch (error) {
-      emit(state.copyWith(
-        status: Status.error,
-        error: error,
-      ));
-    } catch (error) {
-      CustomLogger.logger.e(error);
-      emit(state.copyWith(
-        status: Status.error,
-        error: CommonException.setError(error),
-      ));
-    }
   }
 
   Future<void> _onUserLoginWithToken(
     UserLoginWithToken event,
     Emitter<UserState> emit,
   ) async {
-    emit(state.copyWith(status: Status.loading));
-    try {
-      final response = await _userUsecase.execute<Result<User>>(
-        usecase: LoginWithTokenUsecase(),
-      );
 
-      response.when(
-        success: (user) {
-          emit(state.copyWith(status: Status.success, user: user));
-        },
-        failure: (_) {
-          emit(state.copyWith(status: Status.initial));
-        },
-      );
-    } on ErrorResponse catch (error) {
-      emit(state.copyWith(
-        status: Status.error,
-        error: error,
-      ));
-    } catch (error) {
-      CustomLogger.logger.e(error);
-      emit(state.copyWith(
-        status: Status.error,
-        error: CommonException.setError(error),
-      ));
-    }
   }
 
   Future<void> _onUserLogout(
     UserLogout event,
     Emitter<UserState> emit,
   ) async {
-    emit(state.copyWith(status: Status.loading));
-    try {
-      await _userUsecase.execute(usecase: LogoutUsecase());
-      emit(state.copyWith(status: Status.initial, user: null));
-    } on ErrorResponse catch (error) {
-      emit(state.copyWith(
-        status: Status.error,
-        error: error,
-      ));
-    } catch (error) {
-      CustomLogger.logger.e(error);
-      emit(state.copyWith(
-        status: Status.error,
-        error: CommonException.setError(error),
-      ));
-    }
+
   }
 }
