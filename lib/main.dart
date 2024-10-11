@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nisanaesan/firebase_options.dart';
 import 'package:nisanaesan/screen/splash/splash_screen.dart';
-import 'package:nisanaesan/theme.dart';
+import 'package:nisanaesan/core/theme/theme.dart';
 
 void main() async{
   runApp(const MyApp());

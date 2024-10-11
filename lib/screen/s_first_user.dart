@@ -5,7 +5,7 @@ import 'package:nisanaesan/screen/s_login.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 
-import '../theme.dart';
+import '../core/theme/theme.dart';
 
 class FirstUserScreen extends StatefulWidget {
   const FirstUserScreen({super.key});
