@@ -107,7 +107,7 @@ class _CheckUserTypeState extends State<CheckUserType> {
     return Column(
       children: [
         ElevatedButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+
 
         }, child:
         '이용자'.text.size(25).color(mainColor).make(),
@@ -121,7 +121,6 @@ class _CheckUserTypeState extends State<CheckUserType> {
         ),
         SizedBox(height: 80,),
         ElevatedButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
 
         }, child:
         '관리자'.text.size(25).color(mainColor).make(),
