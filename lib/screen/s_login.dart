@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nisanaesan/path.dart';
 import 'package:nisanaesan/core/theme/theme.dart';
 import 'package:nisanaesan/presentation/main/bloc/user_bloc/user_bloc.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 import '../core/utils/constant.dart';
 import 'home/s_home.dart';
@@ -71,7 +72,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     // 로그인 성공시 화면
                     case Status.success:
-                    return const HomeScreen();
+
+                    return CheckUserType();
 
 
                     // 로그인 에러
@@ -90,3 +92,55 @@ class _LoginScreenState extends State<LoginScreen> {
         ));
   }
 }
+
+
+class CheckUserType extends StatefulWidget {
+  const CheckUserType({super.key});
+
+  @override
+  State<CheckUserType> createState() => _CheckUserTypeState();
+}
+
+class _CheckUserTypeState extends State<CheckUserType> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+
+        }, child:
+        '이용자'.text.size(25).color(mainColor).make(),
+            style:
+            ElevatedButton.styleFrom(
+                minimumSize: Size(200, 75),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(11)
+                )
+            )
+        ),
+        SizedBox(height: 80,),
+        ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen()));
+
+        }, child:
+        '관리자'.text.size(25).color(mainColor).make(),
+            style:
+            ElevatedButton.styleFrom(
+                minimumSize: Size(200, 75),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(11)
+                )
+            )
+        ),
+      ],
+    );
+  }
+}
+
+
+
+
+
+
+

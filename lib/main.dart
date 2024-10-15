@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         
         child:
       MaterialApp(
-      title: '니산내산',
+      title: '우리우산',
       theme:themeData(),
       debugShowCheckedModeBanner: false,
       home:  const SplashScreen()
