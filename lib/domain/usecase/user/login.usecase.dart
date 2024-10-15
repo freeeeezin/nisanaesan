@@ -9,6 +9,7 @@ import '../../../core/utils/exception/common_exception.dart';
 class LoginUsecase extends RemoteUsecase<UserRepository> {
   @override
   Future<User?> call(UserRepository repository) async {
+
     // kakao 앱 설치여부 확인.
     if (await isKakaoTalkInstalled()) {
       try {

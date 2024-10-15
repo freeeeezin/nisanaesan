@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserState {
   Status get status => throw _privateConstructorUsedError;
   ErrorResponse get error => throw _privateConstructorUsedError;
+  UserType get userType => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
 
   /// Create a copy of UserState
@@ -32,7 +33,8 @@ abstract class $UserStateCopyWith<$Res> {
   factory $UserStateCopyWith(UserState value, $Res Function(UserState) then) =
       _$UserStateCopyWithImpl<$Res, UserState>;
   @useResult
-  $Res call({Status status, ErrorResponse error, User? user});
+  $Res call(
+      {Status status, ErrorResponse error, UserType userType, User? user});
 }
 
 /// @nodoc
@@ -52,6 +54,7 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
   $Res call({
     Object? status = null,
     Object? error = null,
+    Object? userType = null,
     Object? user = freezed,
   }) {
     return _then(_value.copyWith(
@@ -63,6 +66,10 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as ErrorResponse,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -79,7 +86,8 @@ abstract class _$$UserStateImplCopyWith<$Res>
       __$$UserStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Status status, ErrorResponse error, User? user});
+  $Res call(
+      {Status status, ErrorResponse error, UserType userType, User? user});
 }
 
 /// @nodoc
@@ -97,6 +105,7 @@ class __$$UserStateImplCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
     Object? error = null,
+    Object? userType = null,
     Object? user = freezed,
   }) {
     return _then(_$UserStateImpl(
@@ -108,6 +117,10 @@ class __$$UserStateImplCopyWithImpl<$Res>
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as ErrorResponse,
+      userType: null == userType
+          ? _value.userType
+          : userType // ignore: cast_nullable_to_non_nullable
+              as UserType,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -122,6 +135,7 @@ class _$UserStateImpl implements _UserState {
   _$UserStateImpl(
       {this.status = Status.initial,
       this.error = const ErrorResponse(),
+      this.userType = UserType.none,
       this.user});
 
   @override
@@ -131,11 +145,14 @@ class _$UserStateImpl implements _UserState {
   @JsonKey()
   final ErrorResponse error;
   @override
+  @JsonKey()
+  final UserType userType;
+  @override
   final User? user;
 
   @override
   String toString() {
-    return 'UserState(status: $status, error: $error, user: $user)';
+    return 'UserState(status: $status, error: $error, userType: $userType, user: $user)';
   }
 
   @override
@@ -145,11 +162,13 @@ class _$UserStateImpl implements _UserState {
             other is _$UserStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.error, error) || other.error == error) &&
+            (identical(other.userType, userType) ||
+                other.userType == userType) &&
             (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, error, user);
+  int get hashCode => Object.hash(runtimeType, status, error, userType, user);
 
   /// Create a copy of UserState
   /// with the given fields replaced by the non-null parameter values.
@@ -164,12 +183,15 @@ abstract class _UserState implements UserState {
   factory _UserState(
       {final Status status,
       final ErrorResponse error,
+      final UserType userType,
       final User? user}) = _$UserStateImpl;
 
   @override
   Status get status;
   @override
   ErrorResponse get error;
+  @override
+  UserType get userType;
   @override
   User? get user;
 
