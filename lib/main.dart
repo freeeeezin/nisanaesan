@@ -1,11 +1,12 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 import 'package:nisanaesan/firebase_options.dart';
 import 'package:nisanaesan/presentation/main/bloc/user_bloc/user_bloc.dart';
 import 'package:nisanaesan/screen/splash/splash_screen.dart';
-import 'package:nisanaesan/core/theme/theme.dart';
+import 'package:nisanaesan/common//theme/theme.dart';
 
 import 'dependency_injection.dart';
 
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         providers: [BlocProvider(create: (_) => getIt<UserBloc>()..add(UserLoginWithToken()))],
         
         child:
-      MaterialApp(
+        GetMaterialApp(
       title: '우리우산',
       theme:themeData(),
       debugShowCheckedModeBanner: false,

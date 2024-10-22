@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 import 'package:nisanaesan/path.dart';
-import 'package:nisanaesan/core/theme/theme.dart';
+
 import 'package:nisanaesan/presentation/main/bloc/user_bloc/user_bloc.dart';
+import 'package:nisanaesan/screen/w_userType.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import '../core/utils/constant.dart';
+import '../common/theme/theme.dart';
+import '../common/utils/constant.dart';
 import 'home/s_home.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -28,7 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
               BlocBuilder<UserBloc, UserState>(
                   builder: (context, state) {
                     switch(state.status){
-
 
                     // 로그인 전 초기 상태.
                     case Status.initial:
@@ -61,7 +63,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                     );
 
-
                     // 로그인 중 로딩
                     case Status.loading:
                     return Center(
@@ -69,12 +70,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     );
 
 
-
                     // 로그인 성공시 화면
                     case Status.success:
-
                     return CheckUserType();
-
 
                     // 로그인 에러
                     case Status.error:
@@ -107,7 +105,10 @@ class _CheckUserTypeState extends State<CheckUserType> {
     return Column(
       children: [
         ElevatedButton(onPressed: (){
-
+            BlocProvider.of<UserBloc>(context).add(
+                UserTypeUser()
+            );
+            Get.to(UserType());
 
         }, child:
         '이용자'.text.size(25).color(mainColor).make(),
@@ -121,7 +122,10 @@ class _CheckUserTypeState extends State<CheckUserType> {
         ),
         SizedBox(height: 80,),
         ElevatedButton(onPressed: (){
-
+          BlocProvider.of<UserBloc>(context).add(
+              UserTypeAdmin()
+          );
+          Get.off(UserType());
         }, child:
         '관리자'.text.size(25).color(mainColor).make(),
             style:

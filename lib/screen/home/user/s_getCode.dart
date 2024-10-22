@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nisanaesan/core/theme/theme.dart';
+import 'package:nisanaesan/common//theme/theme.dart';
 
 class GetCodeScreen extends StatefulWidget {
   const GetCodeScreen({super.key});

@@ -5,13 +5,15 @@ Color mainColor = const Color(0xFF3C5A91);
 
 TextTheme textTheme(){
   return TextTheme(
-    headlineMedium: GoogleFonts.openSans(fontSize: 18, color: Colors.black38),
+    headlineMedium: GoogleFonts.openSans(fontSize: 18, color: Colors.white),
 
   );
 }
 
 AppBar appBar (){
-  return AppBar(
+  return
+    AppBar(
+    automaticallyImplyLeading: false,
     title: Image.asset('assets/images/rive/usan.png', scale: 8,),
   );
 }

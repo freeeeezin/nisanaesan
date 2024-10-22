@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserState {
   Status get status => throw _privateConstructorUsedError;
   ErrorResponse get error => throw _privateConstructorUsedError;
-  UserType get userType => throw _privateConstructorUsedError;
+  Usertype get userType => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
 
   /// Create a copy of UserState
@@ -34,7 +34,7 @@ abstract class $UserStateCopyWith<$Res> {
       _$UserStateCopyWithImpl<$Res, UserState>;
   @useResult
   $Res call(
-      {Status status, ErrorResponse error, UserType userType, User? user});
+      {Status status, ErrorResponse error, Usertype userType, User? user});
 }
 
 /// @nodoc
@@ -69,7 +69,7 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
+              as Usertype,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -87,7 +87,7 @@ abstract class _$$UserStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {Status status, ErrorResponse error, UserType userType, User? user});
+      {Status status, ErrorResponse error, Usertype userType, User? user});
 }
 
 /// @nodoc
@@ -120,7 +120,7 @@ class __$$UserStateImplCopyWithImpl<$Res>
       userType: null == userType
           ? _value.userType
           : userType // ignore: cast_nullable_to_non_nullable
-              as UserType,
+              as Usertype,
       user: freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -135,7 +135,7 @@ class _$UserStateImpl implements _UserState {
   _$UserStateImpl(
       {this.status = Status.initial,
       this.error = const ErrorResponse(),
-      this.userType = UserType.none,
+      this.userType = Usertype.none,
       this.user});
 
   @override
@@ -146,7 +146,7 @@ class _$UserStateImpl implements _UserState {
   final ErrorResponse error;
   @override
   @JsonKey()
-  final UserType userType;
+  final Usertype userType;
   @override
   final User? user;
 
@@ -183,7 +183,7 @@ abstract class _UserState implements UserState {
   factory _UserState(
       {final Status status,
       final ErrorResponse error,
-      final UserType userType,
+      final Usertype userType,
       final User? user}) = _$UserStateImpl;
 
   @override
@@ -191,7 +191,7 @@ abstract class _UserState implements UserState {
   @override
   ErrorResponse get error;
   @override
-  UserType get userType;
+  Usertype get userType;
   @override
   User? get user;
 

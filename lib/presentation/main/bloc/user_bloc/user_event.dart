@@ -6,6 +6,10 @@ abstract class UserEvent {
 
 class UserLogin extends UserEvent {}
 
+class UserTypeAdmin extends UserEvent {}
+
+class UserTypeUser extends UserEvent {}
+
 class UserLogout extends UserEvent {}
 
 class UserLoginWithToken extends UserEvent {}

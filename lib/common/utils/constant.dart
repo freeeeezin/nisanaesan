@@ -8,6 +8,6 @@ class Constants {
       const EdgeInsets.symmetric(horizontal: 16);
 }
 
-enum UserType { none,admin, user }
+enum Usertype { none,admin, user }
 
 enum Status { initial, loading, success, error }
